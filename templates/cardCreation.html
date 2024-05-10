@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <article id="introContainer">
+        <div class="intro">
+            <h3>Why Flashcards?</h3>
+            <p>Flashcards are proven to improve information retention.</p>
+            <p>While looking at the question side, you are training the parts of your brain responsible for active recall.</p>
+            <p>Following this up with an immediate answer, flashcards are a highly effective way of developing your memory in a subject.</p>
+        </div>
+        <div class="intro">
+            <h3>How FlashMash works.</h3>
+            <p>Simply enter your question and answer below and your flashcard will be added to your deck.</p>
+            <p>Review your deck and hover over a card to flip it and reveal the answer.</p>
+        </div>
+    </article>
+    <form action="/display" method="post" id="cardInfo">
+        <input name="question" placeholder="Question:" type="text">
+        <input name="answer" placeholder="Answer:" type="text">
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}
