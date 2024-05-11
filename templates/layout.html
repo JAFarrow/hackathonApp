@@ -16,29 +16,29 @@
 
     <header>
         <h1>FlashMash</h1>
+        <nav>
+            {% if nav == "deck" %}
+                <a href="/deck" type="button">My Deck</a>
+            {% elif nav == "home" %}
+                <a href="/" type="button">Home</a>
+            {% endif %}
+        </nav>
     </header>
-    <div id="flashHeader">
-    {% if get_flashed_messages() %}
-            <div>
-                <h3>{{ get_flashed_messages() | join(" ") }}</h3>
-            </div>
-    {% endif %}
-    </div>
 
     <main>
         {% block main %}{% endblock %}
         <dialog id="modal">
             <form action="/deck" method="post" id="cardInfo">
-                <input name="question" placeholder="Question:" type="text">
-                <input name="answer" placeholder="Answer:" type="text">
-                <button type="submit">Create</button>
+                <input id="formQuestion" name="question" placeholder="Question:" type="text">
+                <input id="formAnswer" name="answer" placeholder="Answer:" type="text">
+                <button id="formSubmit" type="submit">Create</button>
             </form>
         </dialog>
     </main>
 
     <footer>
         <h3>Built by Justin Farrow | </h3>
-        <a href="https://github.com/JAFarrow/hackathonApp"  target="_blank">Source Code</a>
+        <a id="githubLink" href="https://github.com/JAFarrow/hackathonApp"  target="_blank">Source Code</a>
     </footer>
 
 </body>
