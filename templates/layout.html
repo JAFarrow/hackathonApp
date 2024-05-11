@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/static/bootstrap-reboot.css">
     <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/script.js" defer></script>
 
     <title>FlashMash</title>
 
@@ -26,6 +27,13 @@
 
     <main>
         {% block main %}{% endblock %}
+        <dialog id="modal">
+            <form action="/deck" method="post" id="cardInfo">
+                <input name="question" placeholder="Question:" type="text">
+                <input name="answer" placeholder="Answer:" type="text">
+                <button type="submit">Create</button>
+            </form>
+        </dialog>
     </main>
 
     <footer>

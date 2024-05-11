@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div id="heading">
+        <h2>My Deck</h2>
+    </div>
+    <div id="deckContainer">
+        <div class="flipCard">
+            <div class="flipCardInner">
+                <div class="flipCardFront">
+                    <h5>Why is the &ltdialog&gt tag the best HTML tag?</h5>
+                </div>
+                <div class="flipCardBack">
+                    <h5>It makes creating modals a piece of cake.</h5>
+                </div>
+            </div>
+        </div>
+        {% for card in deck %}
+        <div class="flipCard">
+            <div class="flipCardInner">
+                <div class="flipCardFront">
+                    <h5>{{ card.front }}</h5>
+                </div>
+                <div class="flipCardBack">
+                    <h5>{{ card.back }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="flipCard modalBtn" id="placeholder">
+            <img src="/static/add.svg" alt="add card">
+        </div>
+    </div>
+{% endblock %}

@@ -1,22 +1,28 @@
 {% extends "layout.html" %}
 
 {% block main %}
+    <div id="heading">
+        <h2>Welcome to FlashMash!</h2>
+        <p>FlashMash is a simple solution to creating flashcards for studying without the papercuts.</p>
+    </div>
     <article id="introContainer">
         <div class="intro">
             <h3>Why Flashcards?</h3>
             <p>Flashcards are proven to improve information retention.</p>
             <p>While looking at the question side, you are training the parts of your brain responsible for active recall.</p>
-            <p>Following this up with an immediate answer, flashcards are a highly effective way of developing your memory in a subject.</p>
+        </div>
+        <div class="intro">
+            <h3>Hover over your cards..</h3>
+            <p>..and reveal the answer!</p>
+            <p>With the answer so close by, this process reinforces the link between the question and answer immediately.</p>
         </div>
         <div class="intro">
             <h3>How FlashMash works.</h3>
             <p>Simply enter your question and answer below and your flashcard will be added to your deck.</p>
-            <p>Review your deck and hover over a card to flip it and reveal the answer.</p>
+            <p><b>Please Note:</b> Cards will disappear when your session expires.</p>
         </div>
     </article>
-    <form action="/display" method="post" id="cardInfo">
-        <input name="question" placeholder="Question:" type="text">
-        <input name="answer" placeholder="Answer:" type="text">
-        <button type="submit">Create</button>
-    </form>
+    <div id="modalClickableContainer">
+        <button class="modalBtn" id="modalBtn">Create Card</button>
+    </div>
 {% endblock %}
