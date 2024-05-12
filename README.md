@@ -21,6 +21,7 @@ A neutral and bright colour scheme was chosen as it would be the least distracti
 
 In terms of my approach, I knocked togehter a skeleton of the site structure as quickly as possible and then fleshed out the interactivity.
 Once the core user interation loop was working, I 'prettified' the site and added some finishing touches.
+
 ---
 ## Getting Started
 
