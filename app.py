@@ -15,15 +15,18 @@ def serveIndex():
 def serveDeck():
     if request.method == "POST":
         addCardToStorage(request.form.get("question"), request.form.get("answer"))
-        flash("New Card Added to Deck")
         return redirect("/redirect")
     else:
-        storedDeck = session["deck"]
-        return render_template("deck.html", deck=storedDeck, nav="home")
+        return render_template("deck.html", deck=retrieveCards(), nav="home")
     
 @app.route("/redirect", methods=["GET"])
 #This is a hacky way to prevent form resubmission on page reload, not recommended for anything serious :3
 def redirectCheese():
+    return redirect("/deck")
+
+@app.route("/clear", methods=["Get"])
+def clearSession():
+    session.clear()
     return redirect("/deck")
     
 def addCardToStorage(front, back):
@@ -31,4 +34,12 @@ def addCardToStorage(front, back):
         test = session["deck"]
     except KeyError:
         session["deck"] = []
-    session["deck"].append({"front": front, "back": back}) 
+    session["deck"].append({"front": front, "back": back})
+
+
+def retrieveCards():
+    try:
+        test = session["deck"]
+    except KeyError:
+        session["deck"] = []
+    return session["deck"]
