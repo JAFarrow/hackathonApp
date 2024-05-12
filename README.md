@@ -56,7 +56,7 @@ flask run
 
 * Flask
 * Flask-Session
-* 
+
 **INSTALLABLE VIA PIP**
 
 ```shell
