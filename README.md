@@ -15,7 +15,7 @@ A few lines of JS were needed in order to activate a modal.
 Flask is used to serve up the page and with the help of jinja2, provide some degree of interactivity in the application.
 Flasks' session storage and routing is used to store user entered data.
 
-I dedicded against using a database to store user information as it felt unneccesary for an application that is meant for individual study sessions.
+I decided against using a database to store user information as it felt unneccesary for an application that is meant for individual study sessions.
 
 A neutral and bright colour scheme was chosen as it would be the least distracting for a study aid. 
 
